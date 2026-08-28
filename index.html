@@ -16,6 +16,18 @@
         <div class="brand-name">Clearn <span>Study</span></div>
       </div>
 
+      <nav class="side-nav course-nav hidden" id="courseNav">
+        <button class="side-item active" id="dashboardCourseBtn">
+          <span class="side-icon">⌂</span>
+          <span>Dashboard</span>
+          <span class="nav-count" id="dashboardCount">1</span>
+        </button>
+        <button class="side-item" id="peopleCourseBtn">
+          <span class="side-icon">♙</span>
+          <span>Personas</span>
+        </button>
+      </nav>
+
       <nav class="side-nav" id="questionNav">
         <button class="side-item" id="assignmentsBtn">
           <span class="side-icon">▦</span>
@@ -50,7 +62,7 @@
           <span id="semesterCrumb">2025 - Segundo</span>
           <span class="crumb-sep">›</span>
           <span id="sectionCrumb">Sección 7</span>
-          <span class="crumb-sep">›</span>
+          <span class="crumb-sep eval-crumb-sep">›</span>
           <select id="evaluationSelect" class="evaluation-select" aria-label="Seleccionar evaluación"></select>
         </div>
         <div class="top-actions">
@@ -62,17 +74,24 @@
 
       <section class="assignments-page hidden" id="assignmentsPage" aria-label="Assignments">
         <div class="assignments-shell">
-          <div class="assignments-head">
-            <div>
-              <div class="assignments-kicker">Introducción a la Programación</div>
-              <h1 class="assignments-title">Assignments</h1>
-              <p class="assignments-subtitle">Todas tus evaluaciones de práctica en un solo lugar: I1, I2, compilados, controles y exámenes.</p>
+          <section class="assignments-board">
+            <div class="assignments-board-head">
+              <h1>Evaluaciones</h1>
+              <div class="assignments-order">
+                <label for="assignmentSort">Ordenar por</label>
+                <div class="assignment-order-row">
+                  <select id="assignmentSort">
+                    <option value="name">Nombre</option>
+                    <option value="type">Tipo</option>
+                    <option value="progress">Progreso</option>
+                  </select>
+                  <button class="assignment-order-btn" id="assignmentDirection" title="Cambiar orden">⇅</button>
+                  <button class="assignment-order-btn" title="Mostrar/ocultar">◉̸</button>
+                </div>
+              </div>
             </div>
-            <div class="assignments-tools">
-              <input id="assignmentSearch" class="assignment-search" type="search" placeholder="Buscar evaluación…" autocomplete="off" />
-            </div>
-          </div>
-          <div class="assignments-grid" id="assignmentsGrid"></div>
+            <div id="assignmentGroups" class="assignment-groups"></div>
+          </section>
         </div>
       </section>
 
