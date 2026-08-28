@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Entorno personal de práctica de Introducción a la Programación" />
+  <title>Programación · Práctica</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand-row">
+        <div class="brand-mark">⌁</div>
+        <div class="brand-name">Clearn <span>Study</span></div>
+      </div>
+
+      <nav class="side-nav" id="questionNav">
+        <button class="side-item instruction-item" id="instructionsBtn">
+          <span class="side-icon">▱</span>
+          <span>Instrucciones</span>
+        </button>
+        <div id="questionItems"></div>
+        <button class="side-item" id="reviewBtn">
+          <span class="side-icon">☰</span>
+          <span>Revisar</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button id="collapseBtn" class="collapse-btn" title="Colapsar menú">
+          <span>≪</span><span class="collapse-label">Colapsar</span>
+        </button>
+      </div>
+    </aside>
+
+    <section class="main-area">
+      <header class="topbar">
+        <div class="student-pill">Estudiante</div>
+        <div class="breadcrumbs">
+          <span id="courseCrumb">Introducción a la Programación</span>
+          <span class="crumb-sep">›</span>
+          <span id="semesterCrumb">2025 - Segundo</span>
+          <span class="crumb-sep">›</span>
+          <span id="sectionCrumb">Sección 7</span>
+          <span class="crumb-sep">›</span>
+          <select id="evaluationSelect" class="evaluation-select" aria-label="Seleccionar evaluación"></select>
+        </div>
+        <div class="top-actions">
+          <button class="icon-btn" id="themeBtn" title="Cambiar tema">☼</button>
+          <div class="python-status" id="pythonStatus">Python…</div>
+          <div class="avatar">ST</div>
+        </div>
+      </header>
+
+      <main class="workspace">
+        <section class="statement-column">
+          <div class="content-toolbar">
+            <button class="tool-tab active" title="Enunciado">▰</button>
+            <button class="tool-tab" title="Pruebas">⚗</button>
+            <button class="tool-tab" title="Código">⌨</button>
+            <button class="tool-tab" title="Apuntes">✎</button>
+            <div class="toolbar-spacer"></div>
+            <button class="square-btn" title="Archivos">▣</button>
+            <button class="square-btn" title="Carpeta">▱</button>
+          </div>
+
+          <article class="statement-card" id="statementCard">
+            <div class="statement-scroll" id="statementScroll">
+              <section id="instructionsView" class="view-panel hidden"></section>
+              <section id="questionView" class="view-panel"></section>
+              <section id="reviewView" class="view-panel hidden"></section>
+            </div>
+          </article>
+        </section>
+
+        <aside class="editor-column">
+          <div class="editor-shell">
+            <div class="editor-rail">
+              <button title="Archivos" class="rail-btn active">▱</button>
+              <button title="Símbolos" class="rail-btn">Ω</button>
+              <button title="Teclado" class="rail-btn">⌨</button>
+              <button title="Reiniciar" class="rail-btn" id="resetBtn">↻</button>
+              <div class="rail-spacer"></div>
+              <button title="Configuración" class="rail-btn">⚙</button>
+            </div>
+
+            <div class="editor-main">
+              <div class="editor-titlebar">
+                <span>code.py - Editor</span>
+                <button class="settings-btn" title="Configuración del editor">☷</button>
+              </div>
+              <div class="file-tabs">
+                <button class="file-tab active">code.py <span>×</span></button>
+                <button class="file-add">＋</button>
+              </div>
+
+              <div id="editor"></div>
+
+              <div class="runner-bar">
+                <button class="run-btn" id="runBtn">▶ Ejecutar</button>
+                <button class="save-btn" id="saveBtn">Guardar</button>
+                <span class="draft-status" id="draftStatus">Sin cambios</span>
+              </div>
+
+              <section class="results-panel" id="resultsPanel">
+                <div class="results-head">
+                  <span>Resultados</span>
+                  <button id="clearResultsBtn">Limpiar</button>
+                </div>
+                <div class="results-body" id="resultsBody">
+                  <div class="empty-results">Ejecuta tu código para ver los resultados.</div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </aside>
+      </main>
+    </section>
+  </div>
+
+  <div class="unofficial-badge">Entorno personal de estudio · no oficial</div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.52.2/min/vs/loader.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.27.7/full/pyodide.js"></script>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
